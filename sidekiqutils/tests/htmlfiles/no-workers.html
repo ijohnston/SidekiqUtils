@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Sidekiq
+    </title>
+    <meta content="width=device-width,initial-scale=1.0" name="viewport" />
+    <link href="/sidekiq/stylesheets/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/sidekiq/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="/sidekiq/javascripts/application.js" type="text/javascript"></script>
+  </head>
+  <body class="admin">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/sidekiq/">Sidekiq</a>
+          <ul class="nav">
+            <li>
+              <a href="/sidekiq/">Dashboard</a>
+            </li>
+            <li class="active">
+              <a href="/sidekiq/workers">Workers</a>
+            </li>
+            <li>
+              <a href="/sidekiq/queues">Queues</a>
+            </li>
+            <li>
+              <a href="/sidekiq/retries">Retries</a>
+            </li>
+            <li>
+              <a href="/sidekiq/scheduled">Scheduled</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-fixed-bottom navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <ul class="nav">
+            <li>
+              <p class="navbar-text" style="color:white;">
+                Sidekiq v2.9.0
+              </p>
+            </li>
+            <li>
+              <p class="navbar-text">
+                Redis: localhost:6379
+              </p>
+            </li>
+            <li>
+              <p class="navbar-text">
+                Time: 17:36:00 UTC
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="page">
+      <div class="container">
+        <div class="row">
+          <div class="span2 summary_bar">
+            <h4>
+              <span class="title">Status</span><span class="status"><i class="status-sprite status-idle"></i>idle</span>
+            </h4>
+            <ul class="unstyled summary">
+              <li class="processed">
+                <span class="count">31,240</span><span class="desc"> Processed</span>
+              </li>
+              <li class="failed">
+                <span class="count">15,653</span><span class="desc"> Failed</span>
+              </li>
+              <li class="busy">
+                <span class="count">0</span><span class="desc"> Busy</span>
+              </li>
+              <li class="scheduled">
+                <span class="count">0</span><span class="desc"> Scheduled</span>
+              </li>
+              <li class="retries">
+                <span class="count">0</span><span class="desc"> Retries</span>
+              </li>
+              <li class="enqueued">
+                <span class="count">0</span><span class="desc"> Enqueued</span>
+              </li>
+            </ul>
+            <div class="row">
+              <div class="span2"><a class="btn btn-block btn-primary" href="/sidekiq/workers?poll=true" id="live-poll">Live Poll</a>
+              </div>
+            </div>
+          </div>
+          <div class="span10">
+            <div class="row header">
+              <div class="span7">
+                <h3>
+                  Workers
+                </h3>
+              </div>
+            </div>
+            <table class="workers table table-hover table-bordered table-striped table-white">
+              <thead>
+                <th>
+                  Worker
+                </th>
+                <th>
+                  Queue
+                </th>
+                <th>
+                  Class
+                </th>
+                <th>
+                  Arguments
+                </th>
+                <th>
+                  Started
+                </th>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
